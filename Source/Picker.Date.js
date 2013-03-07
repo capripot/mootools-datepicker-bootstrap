@@ -140,11 +140,11 @@ this.DatePicker = Picker.Date = new Class({
 		this.parent();
 
 		if (!this.options.rtl){
-			this.previous = new Element('div.previous[html=&#171;]').inject(this.header);
-			this.next = new Element('div.next[html=&#187;]').inject(this.header);
+			this.previous = new Element('div.previous.icon-chevron-left[html=&#171;]').inject(this.header);
+			this.next = new Element('div.next.icon-chevron-right[html=&#187;]').inject(this.header);
 		} else {
-			this.next = new Element('div.previous[html=&#171;]').inject(this.header);
-			this.previous = new Element('div.next[html=&#187;]').inject(this.header);
+			this.next = new Element('div.previous.icon-chevron-right[html=&#171;]').inject(this.header);
+			this.previous = new Element('div.next.icon-chevron-left[html=&#187;]').inject(this.header);
 		}
 	},
 
@@ -474,7 +474,7 @@ var renderers = {
 			todayString = new Date().toDateString(),
 			currentString = currentDate.toDateString(),
 			weeknumbers = options.weeknumbers,
-			container = new Element('table.days' + (weeknumbers ? '.weeknumbers' : ''), {
+			container = new Element('table.days.table-condensed' + (weeknumbers ? '.weeknumbers' : ''), {
 				role: 'grid', 'aria-labelledby': this.titleID
 			}),
 			header = new Element('thead').inject(container),
@@ -522,14 +522,14 @@ var renderers = {
 	},
 
 	time: function(options, date, fn){
-		var container = new Element('div.time'),
+		var container = new Element('div.time.form-inline.text-center'),
 			// make sure that the minutes are timeWheelStep * k
 			initMinutes = (date.get('minutes') / options.timeWheelStep).round() * options.timeWheelStep
 
 		if (initMinutes >= 60) initMinutes = 0;
 		date.set('minutes', initMinutes);
 
-		var hoursInput = new Element('input.hour[type=text]', {
+		var hoursInput = new Element('input.hour.input-mini[type=text]', {
 			title: Locale.get('DatePicker.use_mouse_wheel'),
 			value: date.format('%H'),
 			events: {
@@ -550,7 +550,10 @@ var renderers = {
 			maxlength: 2
 		}).inject(container);
 
-		var minutesInput = new Element('input.minutes[type=text]', {
+
+		new Element('span.separator[text=:]').inject(container);
+
+		var minutesInput = new Element('input.minutes.input-mini[type=text]', {
 			title: Locale.get('DatePicker.use_mouse_wheel'),
 			value: date.format('%M'),
 			events: {
@@ -572,10 +575,9 @@ var renderers = {
 			maxlength: 2
 		}).inject(container);
 
-		new Element('div.separator[text=:]').inject(container);
 
-		new Element('input.ok', {
-			'type': 'input',
+		new Element('input.ok.btn.btn-primary', {
+			'type': 'button',
 			value: Locale.get('DatePicker.time_confirm_button'),
 			events: {click: function(event){
 				event.stop();

@@ -71,7 +71,7 @@ var Picker = new Class({
 			'aria-atomic': 'true'
 		}).inject(title);
 
-		this.closeButton = new Element('div.closeButton[text=x][role=button]')
+		this.closeButton = new Element('div.closeButton.icon-remove[text=x][role=button]')
 			.addEvent('click', this.close.pass(false, this))
 			.inject(header);
 
