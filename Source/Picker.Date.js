@@ -140,11 +140,11 @@ this.DatePicker = Picker.Date = new Class({
 		this.parent();
 
 		if (!this.options.rtl){
-			this.previous = new Element('div.previous.icon-chevron-left[html=&#171;]').inject(this.header);
-			this.next = new Element('div.next.icon-chevron-right[html=&#187;]').inject(this.header);
+			this.previous = new Element('div.previous').grab(new Element("i.icon-chevron-left[html=&#171;]")).inject(this.header);
+			this.next = new Element('div.next').grab(new Element("i.icon-chevron-right[html=&#187;]")).inject(this.header);
 		} else {
-			this.next = new Element('div.previous.icon-chevron-right[html=&#171;]').inject(this.header);
-			this.previous = new Element('div.next.icon-chevron-left[html=&#187;]').inject(this.header);
+			this.next = new Element('div.previous').grab(new Element("i.icon-chevron-right[html=&#171;]")).inject(this.header);
+			this.previous = new Element('div.next').grab(new Element("i.icon-chevron-left[html=&#187;]")).inject(this.header);
 		}
 	},
 

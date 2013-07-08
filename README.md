@@ -8,9 +8,9 @@ This Plugin makes use of MooTools' Locale and Date plugins in MooTools More, to 
 datepicker, as well as easy formatting and parsing Dates.
 
 This DatePicker is a fork of the original [MonkeyPhysics DatePicker](http://www.monkeyphysics.com/mootools/script/2/datepicker),
-and has improved a lot since then. Though it should be (almost) backward compatible.
+and has improved a lot since then. This version has been apdated for boostrap.
 
-![Screenshot](https://github.com/arian/mootools-datepicker/raw/master/screenshot.png)
+![Screenshot](https://github.com/capripot/mootools-datepicker/raw/master/screenshot.png)
 
 As of version 1.60 the datepicker will only work with MooTools 1.3.
 
@@ -34,8 +34,9 @@ First you need to include the following html tags:
 	<script src="../Source/Picker.js" type="text/javascript"></script>
 	<script src="../Source/Picker.Attach.js" type="text/javascript"></script>
 	<script src="../Source/Picker.Date.js" type="text/javascript"></script>
-
-	<link href="../Source/datepicker_dashboard/datepicker_dashboard.css" rel="stylesheet">
+  
+  <link href="../Source/Bootstrap/bootstrap.css" rel="stylesheet" />
+	<link href="../Source/datepicker_bootstrap/datepicker_bootstrap.css" rel="stylesheet">
 
 Then you can simply use, for example:
 

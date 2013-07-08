@@ -19,7 +19,7 @@ var Picker = new Class({
 		onHide: function(){},
 		onClose: function(){},*/
 
-		pickerClass: 'datepicker',
+		pickerClass: 'datepicker dropdown-menu',
 		inject: null,
 		animationDuration: 400,
 		useFadeInOut: true,

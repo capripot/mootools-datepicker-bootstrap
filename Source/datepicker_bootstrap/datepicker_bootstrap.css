@@ -1,11 +1,12 @@
 /*!
  * Datepicker for Bootstrap
  *
- * Copyright 2012 Stefan Petre
+ * Copyright 2013 Ronan Potage @ DMS
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  */
+
 .datepicker {
   top: 0;
   left: 0;
@@ -19,6 +20,7 @@
   }*/
 
 }
+
 .datepicker:before {
   content: '';
   display: inline-block;
@@ -59,6 +61,9 @@
 }
 .datepicker td.day.disabled {
   color: #eeeeee;
+}
+.datepicker td.day.otherMonth{
+  color: #888888;
 }
 .datepicker td.old,
 .datepicker td.new {
@@ -125,13 +130,38 @@
 
 
 
-.datepicker td.today {
+.datepicker .today {
 	border-radius: 4px;
-	border: 1px solid #0088cc;
+  background: #D9EDF7;
 }
 
+.datepicker .month{
+  width: 96px;
+  float: left;
+  display: block;
+  padding: 11px 0;
+  margin: 2px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
+.datepicker .year{
+  width: 71px;
+  float: left;
+  display: block;
+  padding: 8px 0;
+  margin: 2px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
 
+.datepicker .month:hover,
+.datepicker .year:hover{
+  background: #EEE;
+}
 
+.datepicker .selected,
 .datepicker td.selected {
   color: #ffffff;
   background-color: #006dcc;
@@ -151,6 +181,12 @@
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+.datepicker .selected:hover,
+.datepicker .selected:focus,
+.datepicker .selected:active,
+.datepicker .selected.selected,
+.datepicker .selected.disabled,
+.datepicker .selected[disabled],
 .datepicker td.selected:hover,
 .datepicker td.selected:focus,
 .datepicker td.selected:active,
@@ -163,7 +199,7 @@
 }
 .datepicker td.selected:active,
 .datepicker td.selected.selected {
-  background-color: #003399 \9;
+  background-color: #003399;
 }
 
 
@@ -186,20 +222,25 @@
   font-size: 21px;
 	position: absolute;
 	cursor: pointer;
-	text-indent: -40px;
 	overflow: hidden;
 	width: 14px;
 	height: 14px;
-	top: 6px;
+	padding: 4px;
+  top: 0;
+}
+
+.datepicker .header .next i,
+.datepicker .header .previous i{
+	text-indent: -40px;
 }
 
 .datepicker .header .next {
-	right: 4px;
+  right: 0;
 }
 
 
 .datepicker .header .previous {
-	left: 4px;
+	left: 0;
 }
 
 .datepicker .header .closeButton {
@@ -231,8 +272,22 @@
   height: 16px;
 }
 
-.datepicker .time{
-	
+.datepicker .time input.hour{
+	margin-right: 5px;
+}
+
+.datepicker .time input.minutes,
+.datepicker .time input.ok{
+	margin-left: 5px;
 }
 
 
+
+.datepicker .unavailable,
+.datepicker td.otherMonth.unavailable{
+  color: #DDD;
+}
+.datepicker .unavailable:hover,
+.datepicker td.unavailable:hover{
+  background: none;
+}
