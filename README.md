@@ -10,7 +10,7 @@ datepicker, as well as easy formatting and parsing Dates.
 This DatePicker is a fork of the original [MonkeyPhysics DatePicker](http://www.monkeyphysics.com/mootools/script/2/datepicker),
 and has improved a lot since then. This version has been apdated for boostrap.
 
-![Screenshot](https://github.com/capripot/mootools-datepicker/raw/master/screenshot.png)
+![Screenshot](https://github.com/capripot/mootools-datepicker-bootstrap/raw/master/screenshot.png)
 
 As of version 1.60 the datepicker will only work with MooTools 1.3.
 
